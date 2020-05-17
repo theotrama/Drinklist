@@ -1,8 +1,8 @@
 # Drinklist
-This project is a drinklist to track the drink consumption of e.g. residents in a dormitory. I started to code this project to replace our dormitory's paper checklist. But it was more of a project to learn Django.
+This project is a drinklist to track the drink consumption of e.g. residents in a dormitory. I started to code this project to replace our dormitory's paper tally sheet. But it was more of a project to learn Django and I did not yet deploy it to a production server.
 
 ## Tech Stack
-This project is mainly build with the powerful Django web framework for Python. To have nice looking and responsive templates, Bootstrap was utilized. The project does use only very limited JavaScript, this could be improved in the future (e.g. decouple the backend from the frontend by refactoring the app into a REST API with Angular, Vue or React as the frontend). Currently the database in use is a simple sqlite database for testing. If you want to deploy the app to production you should use PostgreSQL, MySQL, etc.
+The project is mainly build with the powerful Django web framework for Python. To have nice looking and responsive templates, Bootstrap was utilized. The project does use only very limited JavaScript, this could be improved in the future (e.g. decouple the backend from the frontend by refactoring the app into a REST API with Angular, Vue or React as the frontend). Currently the database in use is a simple sqlite database for testing. If you want to deploy the app to production you should use PostgreSQL, MySQL, etc.
 
 ## Setup
 To get the project up and running just clone it to your local work environment. Go to the root directory of the project and run `conda env create -f environment.yml` to create the conda environment. Then you should make the necessary database initializations with Django's built in manage.py file. Therefore run 
