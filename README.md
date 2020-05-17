@@ -15,3 +15,7 @@ These commands should create the database. Verify that everything worked by runn
 ## Deploy to production
 * With database to PostgreSQL, MySQL or similar
 * Use nginx (web server) and gunicorn or uwsgi (application server) to deploy the app
+
+## Todo
+* Add database to make it possible to switch between development and production
+* Deploy with a docker container
