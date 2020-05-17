@@ -1,0 +1,35 @@
+{% extends "navbar.html" %}
+
+{% block title %}
+    <title>Getränkeübersicht</title>
+{% endblock %}
+
+{% block content %}
+<div class="container mt-3">
+    <div class="row justify-content-center">
+        <div class="col">
+            {% if created == True %}
+                <div class="alert alert-success text-justify text-wrap" role="alert">
+                    <p>Hi {{ name }}, du wurdest zur Liste hinzugefügt. Ab jetzt kannst du Getränke in der Liste hinzufügen.</p>
+                </div>
+            {% endif %}
+            {% if created == False %}
+                <div class="alert alert-danger text-justify text-wrap" role="alert">
+                    <p>Hi {{ name }}, dieser Bewohner existiert bereits.</p>
+                </div>
+            {% endif %}
+
+        </div>
+    </div>
+    <div class="row mb-3 justify-content-center">
+        <div class="col justify-content-center">
+            <a class="btn btn-outline-primary btn-block" href="{% url 'drinkcounter:AddResidentView' %}">Weiteren Bewohner hinzufügen</a>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col justify-content-center">
+            <a class="btn btn-outline-primary btn-block" href="{% url 'drinkcounter:AddBeverageView' %}">Getränk hinzufügen</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

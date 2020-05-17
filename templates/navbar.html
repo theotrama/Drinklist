@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block navbar %}
+<!-- As a link -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="{% url 'drinkcounter:OverviewView' %}">K 2.3 Getränkeliste</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+            <a class="nav-item nav-link " href="{% url 'drinkcounter:AddBeverageView' %}">Getränk hinzufügen</a>
+            <a class="nav-item nav-link" href="{% url 'drinkcounter:AddResidentView' %}">Bewohner hinzufügen</a>
+            <a class="nav-item nav-link" href="{% url 'drinkcounter:MakePaymentView' %}">Einzahlen</a>
+            <a class="nav-item nav-link" href="{% url 'drinkcounter:BeveragePriceView' %}">Kostenübersicht</a>
+        </div>
+    </div>
+</nav>
+{% endblock %}

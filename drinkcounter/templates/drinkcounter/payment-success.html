@@ -1,0 +1,34 @@
+{% extends "navbar.html" %}
+
+{% block title %}
+    <title>Getränkeübersicht</title>
+{% endblock %}
+
+{% block content %}
+<div class="container mt-3">
+    <div class="row justify-content-center">
+        <div class="col">
+            <div class="alert alert-success" role="alert">
+                <p>Hi {{resident.name}},</p>
+                <p>
+                    {{amount}} {{beverage.name}} wurden deinem Konto hinzugefügt.
+                    Bitte lege das Geld in die Getränkekasse oder schicke es per PayPal an <a href="mailto:jankoch15@yahoo.de">jankoch15@yahoo.de</a>.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col justify-content-center">
+            <div class="mb-3">
+                <form method="post">
+                    {% csrf_token %}
+                    <button class="btn btn-outline-danger btn-block" name="myButton" type="submit">Nicht richtig? Eintrag rückgängig machen</button>
+                </form>
+            </div>
+            <div>
+                <a class="btn btn-outline-primary btn-block" href="{% url 'drinkcounter:AddBeverageView' %}">Getränk hinzufügen</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

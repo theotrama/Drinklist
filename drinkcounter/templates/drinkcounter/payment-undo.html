@@ -1,0 +1,18 @@
+{% extends "navbar.html" %}
+
+{% block title %}
+    <title>Getränkeübersicht</title>
+{% endblock %}
+
+{% block content %}
+<div class="container mt-3">
+    <div class="row justify-content-center">
+        <div class="col">
+            <div class="alert alert-success" role="alert">
+                <p>Der Eintrag wurde wieder entfernt.</p>
+            </div>
+            <a class="btn btn-outline-primary btn-block" href="{% url 'drinkcounter:MakePaymentView' %}" role="button">Neue Einzahlung</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
