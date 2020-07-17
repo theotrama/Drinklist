@@ -27,11 +27,10 @@ DEBUG = True
 
 if os.getenv('DJANGO_ENV') == 'prod':
     DEBUG = False
-    ALLOWED_HOSTS = ['drinklist.raspberrypi.me']
+    ALLOWED_HOSTS = ['drinklist.raspberrypi.me', 'localhost']
 else:
     DEBUG = True
     ALLOWED_HOSTS = ['localhost', '192.168.0.100', '192.168.0.107']
-
 
 # Application definition
 

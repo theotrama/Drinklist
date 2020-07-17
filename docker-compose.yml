@@ -9,6 +9,7 @@ services:
       - pg_data:/var/lib/postgresql/data
       - pg_backups:/pg_backups
     environment:
+      - POSTGRES_DB=drinklist_db
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
   web:
