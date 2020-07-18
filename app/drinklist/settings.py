@@ -27,7 +27,7 @@ DEBUG = True
 
 if os.getenv('DJANGO_ENV') == 'prod':
     DEBUG = False
-    ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+    ALLOWED_HOSTS = ['localhost', '127.0.0.1', '192.168.0.100']
 else:
     DEBUG = True
     ALLOWED_HOSTS = ['localhost', '127.0.0.1', '192.168.0.100']  # localhost, loopback and laptop's IP
@@ -140,4 +140,5 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = '/staticfiles/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')

@@ -13,13 +13,20 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
   web:
-    build: .
-    ports:
-      - "8000:8000"
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+    volumes:
+      - static_volume:/opt/app/web/staticfiles
+    expose:
+      - 8000
     depends_on:
       - db
+
   nginx:
     build: ./nginx
+    volumes:
+      - static_volume:/opt/app/web/staticfiles
     ports:
       - 1337:80
     depends_on:
@@ -28,3 +35,4 @@ services:
 volumes:
   pg_data: {}
   pg_backups: {}
+  static_volume: {}

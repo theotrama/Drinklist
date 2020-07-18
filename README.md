@@ -32,11 +32,13 @@ To deploy the web app to production with docker containers Oliver Eidel's [tutor
 and testdriven.io's [tutorial](https://testdriven.io/blog/dockerizing-django-with-postgres-gunicorn-and-nginx/) were pure gold.
 
 ### Initial setup
-Start the docker containers and apply the initial database migrations.
+Start the docker containers and apply the initial database migrations. Add the necessary admin staticfiles to the staticfiles directory.
 ```bash
 docker-compose up --build -d
 docker-compose exec web python manage.py migrate
+docker-compose exec web python manage.py collectstatic --no-input --clear
 ```
+
 Additionally, you can create an admin user inside the docker container.
 ```bash
 docker-compose exec web python manage.py createsuperuser
@@ -46,4 +48,10 @@ If you make changes in the project spin the docker containers down and start the
 ```bash
 docker-compose down -v
 docker-compose up --build
+```
+
+### Logging
+The logs of uwsgi, nginx and PostgreSQL are accessible via `docker-compose`.
+```bash
+docker-compose logs -f
 ```
