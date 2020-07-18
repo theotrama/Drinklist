@@ -27,10 +27,10 @@ DEBUG = True
 
 if os.getenv('DJANGO_ENV') == 'prod':
     DEBUG = False
-    ALLOWED_HOSTS = ['localhost', '127.0.0.1', '192.168.0.100', '192.168.0.103']
 else:
     DEBUG = True
-    ALLOWED_HOSTS = ['localhost', '127.0.0.1', '192.168.0.100']  # localhost, loopback and laptop's IP
+
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '192.168.0.100',  '192.168.0.103']  # localhost, loopback, laptop, and RaspberryPi
 
 # Application definition
 
