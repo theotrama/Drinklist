@@ -14,6 +14,7 @@ ENV HOME=/opt/app
 ENV APP_HOME=/opt/app/web
 RUN mkdir -p $APP_HOME
 RUN mkdir $APP_HOME/staticfiles
+RUN mkdir $APP_HOME/mediafiles
 WORKDIR $APP_HOME
 
 # copy project

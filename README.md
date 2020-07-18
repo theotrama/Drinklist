@@ -55,3 +55,6 @@ The logs of uwsgi, nginx and PostgreSQL are accessible via `docker-compose`.
 ```bash
 docker-compose logs -f
 ```
+
+# Todo
+- [ ] Load passwords from env file

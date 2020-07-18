@@ -18,6 +18,7 @@ services:
       dockerfile: Dockerfile
     volumes:
       - static_volume:/opt/app/web/staticfiles
+      - media_volume:/opt/app/web/mediafiles
     expose:
       - 8000
     depends_on:
@@ -27,6 +28,7 @@ services:
     build: ./nginx
     volumes:
       - static_volume:/opt/app/web/staticfiles
+      - media_volume:/opt/app/web/mediafiles
     ports:
       - 1337:80
     depends_on:
@@ -36,3 +38,4 @@ volumes:
   pg_data: {}
   pg_backups: {}
   static_volume: {}
+  media_volume: {}

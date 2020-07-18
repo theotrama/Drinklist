@@ -27,7 +27,7 @@ DEBUG = True
 
 if os.getenv('DJANGO_ENV') == 'prod':
     DEBUG = False
-    ALLOWED_HOSTS = ['localhost', '127.0.0.1', '192.168.0.100']
+    ALLOWED_HOSTS = ['localhost', '127.0.0.1', '192.168.0.100', '192.168.0.103']
 else:
     DEBUG = True
     ALLOWED_HOSTS = ['localhost', '127.0.0.1', '192.168.0.100']  # localhost, loopback and laptop's IP
@@ -142,3 +142,6 @@ USE_TZ = True
 
 STATIC_URL = '/staticfiles/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+MEDIA_URL = '/mediafiles/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'mediafiles')
