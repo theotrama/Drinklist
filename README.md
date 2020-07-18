@@ -61,3 +61,4 @@ docker-compose logs -f
 
 # Todo
 - [ ] Load passwords from env file
+- [ ] Add section about conda and pip to development environment
