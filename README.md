@@ -2,7 +2,8 @@
 This project is a drinklist to track the drink consumption of e.g. residents in a dormitory. I started to code this project to replace our dormitory's paper tally sheet. But it was more of a project to learn Django and to learn how to deploy a Django app to production inside docker containers.
 
 ## Tech Stack
-The project is mainly build with the powerful Django web framework for Python. To have nice looking and responsive templates, Bootstrap was utilized. The project does use only very limited JavaScript, this could be improved in the future (e.g. decouple the backend from the frontend by refactoring the app into a REST API with Angular, Vue or React as the frontend). Currently the database in use is a simple sqlite database for testing. If you want to deploy the app to production you should use PostgreSQL, MySQL, etc.
+The project is mainly build with the powerful Django web framework for Python. To have nice looking and responsive templates, Bootstrap was utilized.
+The project does use only very limited JavaScript, this could be improved in the future (e.g. decouple the backend from the frontend by refactoring the app into a REST API with Angular, Vue or React as the frontend).
 
 ## Development environment
 To get the project up and running clone it to your local work environment.
@@ -27,20 +28,18 @@ Subsequently, go to the web app's interface at [http://localhost:8000/drinkcount
 ## Production environment
 The production environment uses uwsgi as the application server and nginx as the web server.
 The Django web app and the PostgreSQL database are running in separate docker containers that are tied together with docker-compose.
+To deploy the web app to production with docker containers Oliver Eidel's [tutorial](https://www.eidel.io/2017/07/10/dockerizing-django-uwsgi-postgres/)
+and testdriven.io's [tutorial](https://testdriven.io/blog/dockerizing-django-with-postgres-gunicorn-and-nginx/) were pure gold.
 
 ### Initial setup
 Start the docker containers and apply the initial database migrations.
 ```bash
 docker-compose up --build -d
-docker-compose exec web /bin/bash
-cd /opt/drinklist
-python manage.py migrate
+docker-compose exec web python manage.py migrate
 ```
 Additionally, you can create an admin user inside the docker container.
 ```bash
-docker-compose exec web /bin/bash
-cd /opt/drinklist
-python manage.py createsuperuser
+docker-compose exec web python manage.py createsuperuser
 ```
 
 If you make changes in the project spin the docker containers down and start them up again.
