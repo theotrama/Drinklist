@@ -35,7 +35,7 @@ python manage.py runserver
 These commands should create the database and start up the server. Create an admin user with `python manage.py createsuperuser`
 and go to [http://localhost:8000/admin/](http://localhost:8000/admin/).
 On this page login with the previously created admin user. Make sure that the database tables were added successfully.
-Subsequently, go to the web app's interface at [http://localhost:8000/drinkcounter/overview/](http://localhost:8000/drinkcounter/overview/).
+Subsequently, go to the web app's interface at [http://localhost:8000](http://localhost:8000).
 
 ## Production environment
 The production environment uses uwsgi as the application server and nginx as the web server.
@@ -73,5 +73,6 @@ docker-compose logs -f
 
 # Todo
 - [ ] Load passwords from env file
-- [ ] Add section about conda and pip to development environment
+- [x] Add section about conda and pip to development environment
+- [ ] Add SSL certificate
 - [x] Redirect `drinklist.raspberrypi.me` to `drinklist.raspberrypi.me/drinkcounter/overview`
