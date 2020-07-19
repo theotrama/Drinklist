@@ -10,12 +10,21 @@ The project does use only very limited JavaScript, this could be improved in the
 
 ## Development environment
 To get the project up and running clone it to your local work environment.
+### Conda
 Go to the root directory of the project. There create and activate the conda environment.
 ```bash
 conda env create -f environment.yml
 conda activate djangoenv
 ```
+### Pip
+If you want to use pip instead of conda you can use the `requirements.txt` file to create a virtual environment.
+```bash
+pip install venv
+source venv/bin/activate
+pip install -r requirements.txt
+```
 
+### Initial setup
 Initialize the database with Django's built in manage.py file and start the app.
 ```bash
 python manage.py makemigrations
@@ -47,6 +56,9 @@ Additionally, you can create an admin user inside the docker container.
 docker-compose exec web python manage.py createsuperuser
 ```
 
+After this preliminary setup the web app is available at [localhost:1337](http://localhost:1337) if you ran the above
+commands on your local machine.
+
 If you make changes in the project spin the docker containers down and start them up again.
 ```bash
 docker-compose down -v
@@ -62,3 +74,4 @@ docker-compose logs -f
 # Todo
 - [ ] Load passwords from env file
 - [ ] Add section about conda and pip to development environment
+- [x] Redirect `drinklist.raspberrypi.me` to `drinklist.raspberrypi.me/drinkcounter/overview`

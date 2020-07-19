@@ -5,7 +5,7 @@ from drinkcounter.views import AddBeverageView, AddResidentView, BeveragePriceVi
 
 app_name = 'drinkcounter'
 urlpatterns = [
-    path('overview/', OverviewView.as_view(), name='OverviewView'),
+    path('', OverviewView.as_view(), name='OverviewView'),
     path('details/<int:resident_id>/', DetailedView.as_view(), name='DetailedView'),
     path('add-beverage/', AddBeverageView.as_view(), name='AddBeverageView'),
     path('add-resident/', AddResidentView.as_view(), name='AddResidentView'),
