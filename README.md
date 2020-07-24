@@ -73,6 +73,6 @@ docker-compose logs -f
 
 # Todo
 - [ ] Load passwords from env file
+- [ ] Login and save login credentials in cookies
 - [x] Add section about conda and pip to development environment
-- [ ] Add SSL certificate
 - [x] Redirect `drinklist.raspberrypi.me` to `drinklist.raspberrypi.me/drinkcounter/overview`
