@@ -3,6 +3,8 @@ This project is a drinklist to track the drink consumption of e.g. residents in 
 I started to code this project to replace our dormitory's paper tally sheet.
 But it was more of a project to learn Django and to learn how to deploy a Django app to production with docker containers.
 
+![](test_gif.gif)
+
 ## Tech Stack
 The project is mainly build with the powerful Django web framework for Python. The templates are styled with Bootstrap 4.
 The project does use only very limited JavaScript, this could be improved in the future
