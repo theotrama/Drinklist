@@ -11,7 +11,7 @@ The project does use only very limited JavaScript, this could be improved in the
 (e.g. decouple the backend from the frontend by refactoring the app into a REST API with Angular, Vue or React as the frontend).
 
 ## Development environment
-To get the project up and running clone it to your local work environment.
+To get the project up and running clone it into your local work environment.
 ### Conda
 Go to the root directory of the project. There create and activate the conda environment.
 ```bash
@@ -31,6 +31,7 @@ Initialize the database with Django's built in manage.py file and start the app.
 ```bash
 python manage.py makemigrations
 python manage.py migrate
+python manage.py test
 python manage.py runserver
 ```
 
