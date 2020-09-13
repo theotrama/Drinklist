@@ -3,7 +3,7 @@ This project is a drinklist to track the drink consumption of e.g. residents in 
 I started to code this project to replace our dormitory's paper tally sheet.
 But it was more of a project to learn Django and to learn how to deploy a Django app to production with docker containers.
 
-![](drinklist_example.gif)
+![](drinklist.gif)
 
 ## Tech Stack
 The project is mainly build with the powerful Django web framework for Python. The templates are styled with Bootstrap 4.
@@ -75,6 +75,7 @@ docker-compose logs -f
 ```
 
 # Todo
+- [ ] Remove secret key for production!
 - [ ] Load passwords from env file
 - [ ] Login and save login credentials in cookies
 - [x] Add section about conda and pip to development environment

@@ -90,7 +90,7 @@ if os.getenv('DOCKER_CONTAINER'):
             'NAME': 'drinklist_db',
             'USER': 'postgres',
             'PASSWORD': 'postgres',
-            'HOST': 'db',  # <-- this is new
+            'HOST': 'db',
             'PORT': '5432',
         }
     }
