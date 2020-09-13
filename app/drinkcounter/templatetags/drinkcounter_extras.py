@@ -12,7 +12,7 @@ def filter_by_resident_and_beverage(consumption, resident_and_beverage):
     """
     Filter the consumptions by resident name to serve it to a template
     :param consumption: QuerySet // of all consumptions
-    :param String: Name of resident and beverage for which should be filtered
+    :param resident_and_beverage: Name of resident and beverage for which should be filtered
     """
     if resident_and_beverage is None:
         return False

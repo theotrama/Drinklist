@@ -24,7 +24,7 @@ class Resident(models.Model):
         """
         return 235 <= self.room_number <= 248
 
-    def calculateConsumptionPerResident(self):
+    def calculate_consumption_per_resident(self):
         """
         Calculate how much each beverages each resident consumes
         """
@@ -44,7 +44,7 @@ class Resident(models.Model):
             credit -= beverage.price * drinks_consumed
         return round(credit, 2)
 
-    consumption_count = property(calculateConsumptionPerResident)
+    consumption_count = property(calculate_consumption_per_resident)
 
     def update_credit(self, amount, consumption=True):
         """
