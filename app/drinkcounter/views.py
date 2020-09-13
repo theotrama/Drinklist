@@ -43,8 +43,6 @@ class OverviewView(TemplateView):
             'beverage': beverage,
         }
 
-        # print(consumption.resident)
-
         return render(request, self.template_name, context=context)
 
 
@@ -63,7 +61,7 @@ class DetailedView(TemplateView):
         for beverage in beverages:
             consumption_count = consumption.filter(beverage=beverage.id).count()
             filtered_consumption[beverage.name] = consumption_count
-        print(resident.credit)
+
         context = {
             'resident': resident,
             'filtered_consumption': filtered_consumption,

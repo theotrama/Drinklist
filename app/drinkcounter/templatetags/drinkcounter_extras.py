@@ -17,7 +17,7 @@ def filter_by_resident_and_beverage(consumption, resident_and_beverage):
     if resident_and_beverage is None:
         return False
     arg_list = [resident_and_beverage.strip() for arg in resident_and_beverage.split(',')]
-    print(arg_list)
+
     try:
         resident = Resident.objects.get(name=name)
         beverage = Beverage.objects.get(name=beverage)
