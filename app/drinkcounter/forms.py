@@ -80,8 +80,8 @@ class AddResidentForm(forms.Form):
     :param resident: Integer field but shows resident name as strings
     :param beverage: Object but shows beverage name as string
     """
-    name = forms.CharField(label='Name', widget=forms.TextInput(attrs={'placeholder': 'Isi'}))
-    room = forms.IntegerField(label='Zimmernummer', widget=forms.TextInput(attrs={'placeholder': '244'}))
+    name = forms.CharField(label='Name', widget=forms.TextInput(attrs={'placeholder': 'Michael'}))
+    room = forms.IntegerField(label='Zimmernummer', widget=forms.TextInput(attrs={'placeholder': '500'}))
 
 
 class MakePaymentForm(forms.Form):

@@ -63,7 +63,7 @@ class DetailedView(TemplateView):
         for beverage in beverages:
             consumption_count = consumption.filter(beverage=beverage.id).count()
             filtered_consumption[beverage.name] = consumption_count
-
+        print(resident.credit)
         context = {
             'resident': resident,
             'filtered_consumption': filtered_consumption,
@@ -113,7 +113,7 @@ class AddBeverageView(TemplateView):
             resident = Resident.objects.get(id=resident_id)
             beverage = Beverage.objects.get(id=beverage.id)
 
-            resident.update_credit(beverage.price, True)
+            resident.update_credit(amount, beverage, True)
 
             saved_ids = list()
             # Create consumption object
@@ -288,7 +288,7 @@ class MakePaymentView(TemplateView):
             # Add payment to the database and update credit
             payment = Payment(resident=resident, amount=amount)
             payment.save()
-            resident.update_credit(int(amount), False)
+            resident.update_credit(int(amount), consumption=False)
 
             request.session['amount'] = amount
             request.session['resident_id'] = resident_id

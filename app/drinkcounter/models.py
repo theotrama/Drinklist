@@ -12,7 +12,7 @@ class Resident(models.Model):
     room_number = models.IntegerField()
     name = models.CharField(max_length=50)
     moved_out = models.BooleanField(default=False)
-    credit = models.FloatField(default=0)
+    credit = models.DecimalField(default=0, decimal_places=2, max_digits=1000)
 
     def __str__(self):
         return self.name
@@ -46,14 +46,15 @@ class Resident(models.Model):
 
     consumption_count = property(calculate_consumption_per_resident)
 
-    def update_credit(self, amount, consumption=True):
+    def update_credit(self, amount, beverage=None, consumption=True):
         """
         Update resident's credit
         :param amount: Amount by which the credit should be decreased/increased
+        :param beverage: Beverage object
         :param consumption: If true then decrease (consumption), if false then increase (payment)
         """
         if consumption:
-            self.credit -= amount
+            self.credit -= amount * beverage.price
         else:
             self.credit += amount
         self.save()
@@ -68,7 +69,7 @@ class Beverage(models.Model):
         verbose_name_plural = 'Beverages'
 
     name = models.CharField(max_length=50)
-    price = models.FloatField()
+    price = models.DecimalField(decimal_places=2, max_digits=10)
 
     def __str__(self):
         return self.name
