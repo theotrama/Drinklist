@@ -3,7 +3,7 @@ from random import randrange
 from django.test import TestCase
 from django.urls import reverse
 
-from drinkcounter.forms import AddBeverageForm, create_resident_choice_values
+from drinkcounter.forms import create_resident_choice_values
 from drinkcounter.models import Beverage, Consumption, Resident
 
 
