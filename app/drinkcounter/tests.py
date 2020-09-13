@@ -20,7 +20,7 @@ def create_consumption():
     Create a consumption in the database
     """
     resident = Resident.objects.create(room_number=000, name='Dummy')
-    beverage = Beverage.objects.create(name='Almduder', price=1.0)
+    beverage = Beverage.objects.create(name='Almdudler', price=1.0)
     return Consumption.objects.create(resident=resident, beverage=beverage)
 
 
