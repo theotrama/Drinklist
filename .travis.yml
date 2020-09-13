@@ -6,4 +6,4 @@ before_install:
 install:
   - pip install -r app/requirements.txt
 script:
-  - python manage.py test
+  - python app/manage.py test
