@@ -57,7 +57,7 @@ If you want to use pip instead of conda you can use the `requirements.txt` file 
 
 On macOS and Linux:
 ```
-pip install venv
+python3 -m pip install --user virtualenv
 python3 -m venv env
 source venv/bin/activate
 pip install -r requirements.txt
@@ -65,7 +65,7 @@ pip install -r requirements.txt
 
 On Windows:
 ```
-pip install venv
+py -m pip install --user virtualenv
 py -m venv env
 .\env\Scripts\activate
 pip install -r requirements.txt
