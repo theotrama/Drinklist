@@ -54,6 +54,7 @@ conda activate djangoenv
 ```
 ### Pip
 If you want to use pip instead of conda you can use the `requirements.txt` file to create a virtual environment.
+
 On macOS and Linux:
 ```
 pip install venv
