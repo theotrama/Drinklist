@@ -10,36 +10,6 @@ The project is mainly build with the powerful Django web framework for Python. T
 The project does use only very limited JavaScript, this could be improved in the future
 (e.g. decouple the backend from the frontend by refactoring the app into a REST API with Angular, Vue or React as the frontend).
 
-## Development environment
-To get the project up and running clone it into your local work environment.
-### Conda
-Go to the root directory of the project. There create and activate the conda environment.
-```bash
-conda env create -f environment.yml
-conda activate djangoenv
-```
-### Pip
-If you want to use pip instead of conda you can use the `requirements.txt` file to create a virtual environment.
-```bash
-pip install venv
-source venv/bin/activate
-pip install -r requirements.txt
-```
-
-### Initial setup
-Initialize the database with Django's built in manage.py file and start the app.
-```bash
-python manage.py makemigrations
-python manage.py migrate
-python manage.py test
-python manage.py runserver
-```
-
-These commands should create the database and start up the server. Create an admin user with `python manage.py createsuperuser`
-and go to [http://localhost:8000/admin/](http://localhost:8000/admin/).
-On this page login with the previously created admin user. Make sure that the database tables were added successfully.
-Subsequently, go to the web app's interface at [http://localhost:8000](http://localhost:8000).
-
 ## Production environment
 The production environment uses uwsgi as the application server and nginx as the web server.
 The Django web app and the PostgreSQL database are running in separate docker containers that are tied together with docker-compose.
@@ -74,8 +44,50 @@ The logs of uwsgi, nginx and PostgreSQL are accessible via `docker-compose`.
 docker-compose logs -f
 ```
 
+## Development environment
+To get the project up and running clone it into your local work environment.
+### Conda
+Go to the root directory of the project. There create and activate the conda environment.
+```bash
+conda env create -f environment.yml
+conda activate djangoenv
+```
+### Pip
+If you want to use pip instead of conda you can use the `requirements.txt` file to create a virtual environment.
+On macOS and Linux:
+```
+pip install venv
+python3 -m venv env
+source venv/bin/activate
+pip install -r requirements.txt
+```
+
+On Windows:
+```
+pip install venv
+py -m venv env
+.\env\Scripts\activate
+pip install -r requirements.txt
+```
+
+### Initial setup
+Initialize the database with Django's built in manage.py file and start the app.
+```bash
+python manage.py makemigrations
+python manage.py migrate
+python manage.py test
+python manage.py runserver
+```
+
+These commands should create the database and start up the server. Create an admin user with `python manage.py createsuperuser`
+and go to [http://localhost:8000/admin/](http://localhost:8000/admin/).
+On this page login with the previously created admin user. Make sure that the database tables were added successfully.
+Subsequently, go to the web app's interface at [http://localhost:8000](http://localhost:8000).
+
+
 # Todo
 - [ ] Remove secret key for production!
+- [ ] Add docker build to Travis CI
 - [ ] Load passwords from env file
 - [ ] Login and save login credentials in cookies
 - [x] Add section about conda and pip to development environment
